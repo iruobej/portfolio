@@ -9,7 +9,7 @@ function App() {
     <>
       <h1>Joshua Iruobe's Portfolio</h1> 
       <div className="avatar">
-        <img src="IMG_0345.JPG" alt="" height="200px"/>
+        <img src="/portfolio_pic.JPG" alt="" height="200px"/>
       </div>
       <hr />
       <p className="header"><span style={{color: '#61d4e8'}}>Web developer,</span> passionate about clean design and code<span style={{color: '#61d4e8'}}>.</span></p>
