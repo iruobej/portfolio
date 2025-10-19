@@ -1,3 +1,56 @@
+:root {
+  --dark-grey: rgb(56, 56, 64);
+  --avatar-size: 145px;
+  --light-blue: #61d4e8;
+  --icon-size: 30px;
+}
 .fa-bars {
   color: black;
+}
+body {
+  background-color: var(--dark-grey);
+  color: white;
+  font-family: "Urbanist", sans-serif;
+}
+
+.circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  background-color: white;
+} 
+
+.avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: 50%;
+  overflow: hidden; /*Hides the rest of the picture*/
+  background: white;
+  border: 8px solid white;
+}
+
+.header {
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: var(--light-blue);
+  padding: 5px;
+  font-family: "Urbanist", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+i {
+  width: var(--icon-size);
+  height: var(--icon-size);
 }
