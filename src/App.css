@@ -1,16 +1,45 @@
 :root {
-  --dark-grey: rgb(56, 56, 64);
-  --avatar-size: 145px;
+  --dark-blue: rgb(22, 1, 70);
+  --darker-blue: rgb(0, 4, 39);
+  --grey: rgb(54, 54, 54);
   --light-blue: #61d4e8;
   --icon-size: 30px;
 }
-.fa-bars {
-  color: black;
-}
+
 body {
-  background-color: var(--dark-grey);
+  background-color: var(--dark-blue);
   color: white;
   font-family: "Urbanist", sans-serif;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  background-color: var(--darker-blue);
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  justify-content: flex-end; /*Aligns items right*/
+  padding: 30px;
+  padding-right: 40px;
+}
+
+nav ul li a:hover {
+  color: var(--light-blue);
+}
+
+.fa-bars {
+  color: black;
 }
 
 .circle {
@@ -23,10 +52,8 @@ body {
 .avatar {
   width: var(--avatar-size);
   height: var(--avatar-size);
-  border-radius: 50%;
   overflow: hidden; /*Hides the rest of the picture*/
-  background: white;
-  border: 8px solid white;
+
 }
 
 .header {
@@ -53,4 +80,65 @@ a {
 i {
   width: var(--icon-size);
   height: var(--icon-size);
+}
+
+/*hero page at the top*/
+.hero{
+  display: flex;
+  align-items: center;
+  min-height: 100vh; /*covers whole screen*/
+  padding: 0 80px;
+  overflow: hidden;
+}
+
+.hero-text {
+  flex: 1.4;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight:800;
+  line-height: 1.1;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+  position: relative;
+}
+
+.hero-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex: 0.6;
+
+
+  /*fading effect*/
+  mask-image: linear-gradient(to left, black 70%, transparent);
+  -webkit-mask-image: linear-gradient(to left, black 70%, transparent);
+}
+
+.cvButton {
+  background-color: var(--darker-blue);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  box-shadow: #626464;
+  padding: 10px;
+  width: 150px;
+  font-weight: 500;
+}
+
+.cvButton:hover {
+  width: 160px;
+}
+
+.cvButton a {
+  font-weight: 700;
+  font-family: "Urbanist", sans-serif;
 }
