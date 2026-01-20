@@ -1,13 +1,15 @@
 :root {
-  --dark-blue: rgb(22, 1, 70);
-  --darker-blue: rgb(0, 4, 39);
+  --dark-purple: rgb(22, 1, 70);
+  --darker-purple: rgb(0, 4, 39);
+  --light-purple: rgb(145, 137, 169);
   --grey: rgb(54, 54, 54);
   --light-blue: #61d4e8;
   --icon-size: 30px;
+  --nav-height: 96px;
 }
 
 body {
-  background-color: var(--dark-blue);
+  background-color: var(--dark-purple);
   color: white;
   font-family: "Urbanist", sans-serif;
   margin: 0;
@@ -24,7 +26,7 @@ nav {
 }
 
 nav ul {
-  background-color: var(--darker-blue);
+  background-color: var(--darker-purple);
   margin: 0;
   list-style: none;
   display: flex;
@@ -50,10 +52,7 @@ nav ul li a:hover {
 } 
 
 .avatar {
-  width: var(--avatar-size);
-  height: var(--avatar-size);
   overflow: hidden; /*Hides the rest of the picture*/
-
 }
 
 .header {
@@ -82,17 +81,25 @@ i {
   height: var(--icon-size);
 }
 
+#home {
+  min-height: 100vh;
+}
+
+section {
+  scroll-margin-top: var(--nav-height);
+}
+
 /*hero page at the top*/
 .hero{
   display: flex;
   align-items: center;
   min-height: 100vh; /*covers whole screen*/
-  padding: 0 80px;
   overflow: hidden;
 }
 
 .hero-text {
   flex: 1.4;
+  padding: 0 80px;
   z-index: 2;
 }
 
@@ -124,21 +131,86 @@ i {
 }
 
 .cvButton {
-  background-color: var(--darker-blue);
+  background-color: var(--darker-purple);
   color: white;
   border-radius: 5px;
   border: none;
   box-shadow: #626464;
-  padding: 10px;
-  width: 150px;
-  font-weight: 500;
+  padding: 15px;
+  font-weight: 700;
+  font-family: "Urbanist", sans-serif;
+  display: inline-flex;
+
+  transition: width 0.2s ease;
 }
 
 .cvButton:hover {
-  width: 160px;
+  color: var(--dark-purple);
+  background-color: var(--light-blue);
+  transform: scale(1.06);
 }
 
-.cvButton a {
-  font-weight: 700;
-  font-family: "Urbanist", sans-serif;
+section:not(#home) {
+  min-height: calc(100vh - var(--nav-height) - 130px); /* 160 = 80 top + 80 bottom margin */
+  gap: 24px;
+  padding: 80px;
+  background-color: var(--light-purple);
+  margin: 80px 70px;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.tech-stack {
+  display: flex;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.tech-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover; 
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.25s ease-in-out;
+  background-image: white;
+}
+
+/* label BELOW the image */
+.tech-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* hover the WRAPPER, not just the image */
+.tech-item:hover img {
+  transform: translateY(-6px);
+}
+
+.tech-item:hover .tech-label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.tech-item:hover .tech-label {
+  opacity: 1;
+  transform: translateY(0);
 }
