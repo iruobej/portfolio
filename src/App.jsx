@@ -123,7 +123,11 @@ function App() {
           </div>
         </section>
         <section id="education">
-
+          <h2>Education</h2>
+          <h3>Loughborough University</h3>
+          <p>Computer Science BSc - Grade 2:1</p>
+          <h3>Beths Grammar School</h3>
+          <p>A Levels: Mathematics (B), Computer Science (A), Sociology (A)</p>
         </section>
         <section id="skills">
           <h2>Skills</h2>
