@@ -137,12 +137,26 @@ function App() {
         </section>
           <section id="projects">
             <h2>Projects</h2>
-            <button className="project"><a href="https://todolist-jiruobe.netlify.app/">To Do List</a></button>
-            <button className="project"><a href="https://ji-calculator.netlify.app/">Calculator</a></button>
+            <button className="project"><a href="https://movie-master-ji.netlify.app/">Movie Master</a></button>
             <button className="project"><a href="https://weather-jiruobe.netlify.app/">Weather App</a></button>
+            <button className="project"><a href="https://ji-calculator.netlify.app/">Calculator</a></button>
+            <button className="project"><a href="https://todolist-jiruobe.netlify.app/">To Do List</a></button>
         </section>
         <section id="contact">
-          <h2>Contacts</h2>
+          <h2>Contact</h2>
+          <form action="">
+            <input 
+              type="text" 
+              placeholder='Heading'
+            />
+            <input 
+              type="text" 
+              placeholder='Enter your message'
+            />
+            <button type="submit">Send</button>
+
+          </form>
+        </section>
           <a href="mailto:iruobejoshua96@gmail.com">
             <i className="fa-solid fa-envelope"></i>
           </a>
@@ -160,7 +174,6 @@ function App() {
             <i className="fa-solid fa-phone"></i>
           </a>
           <span>: +447535293713</span>
-        </section>
       </div>
     </>
   )
