@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Navbar from './components/Navbar'
+import Project from './components/Project'
 import './App.css'
 
 import jsLogo from "./images/js.png";
@@ -16,6 +17,13 @@ import javaLogo from "./images/java.png";
 import kotlinLogo from "./images/kotlin.jfif";
 import cppLogo from "./images/c++.webp";
 import sqlLogo from "./images/sql.jfif";
+import LUlogo from "./images/LU.png";
+import bethsLogo from "./images/beths.jpg";
+
+import mmPic from "./images/MM.PNG"
+import weatherPic from "./images/weatherApp.png"
+import calcPic from "./images/calcPic.png"
+import todoPic from "./images/todoPic.png"
 
 function App() {
 
@@ -122,29 +130,65 @@ function App() {
             </div>
           </div>
         </section>
+        <section id="projects">
+            <h1>Projects</h1>
+            <div className="project-container">
+              <Project 
+                projName="Movie Master"
+                link="https://movie-master-ji.netlify.app/"
+                pic={mmPic}
+                desc="Movie Master is a full-stack movie discovery and AI-powered chat application built with React, 
+                TypeScript, and Netlify Functions.
+                Users can search movies via the TMDB API, manage a personal watchlist, and chat with an AI assistant (“MovieBot”) 
+                for movie recommendations and questions."            
+              />
+              <Project 
+                projName="Weather App"
+                link="https://weather-jiruobe.netlify.app/"
+                pic={weatherPic}
+                desc="Weather App that enables users to find the temperature of cities across the world. 
+                I made this project to practice working with APIs can get used to API calls and responses."            
+              />
+              <Project 
+                projName="Calculator"
+                link="https://ji-calculator.netlify.app/"
+                pic={calcPic}
+                desc="A functional calculator which can compute the answer to standard mathematical expressions."            
+              />
+              <Project 
+                projName="To Do List"
+                link="https://todolist-jiruobe.netlify.app/"
+                pic={todoPic}
+                desc="To-do List web app to help users stay on top of daily tasks."            
+              />
+            </div>
+        </section>
         <section id="education">
           <h2>Education</h2>
-          <h3>Loughborough University</h3>
+          <div className="tech-item">
+            <img src={LUlogo} alt="Lough Uni Logo" className="tech-item"/>
+            <h3>Loughborough University</h3>
+          </div>
           <p>Computer Science BSc - Grade 2:1</p>
-          <h3>Beths Grammar School</h3>
-          <p>A Levels: Mathematics (B), Computer Science (A), Sociology (A)</p>
+          <br />
+          <hr />
+          <br />
+          <div className="tech-item">
+            <img src={bethsLogo} alt="Beths Grammar School Logo" />
+            <h3>Beths Grammar School</h3>
+            <p>A Levels: Mathematics (B), Computer Science (A), Sociology (A)</p>
+          </div>
         </section>
         <section id="skills">
-          <h2>Skills</h2>
-          <ul>
-            <li>React.js</li>
-            <li>Problem-solving</li>
-            <li>Responsive Design</li>
-            <li>State management</li>
-            <li>Git & workflow</li>
-          </ul>
-        </section>
-          <section id="projects">
-            <h2>Projects</h2>
-            <button className="project"><a href="https://movie-master-ji.netlify.app/">Movie Master</a></button>
-            <button className="project"><a href="https://weather-jiruobe.netlify.app/">Weather App</a></button>
-            <button className="project"><a href="https://ji-calculator.netlify.app/">Calculator</a></button>
-            <button className="project"><a href="https://todolist-jiruobe.netlify.app/">To Do List</a></button>
+          <h1>Skills</h1>
+
+            <hr />
+            <h2>React.js</h2>
+            <h2>Problem-solving</h2>
+            <h2>Responsive Design</h2>
+            <h2>State management</h2>
+            <h2>Git & workflow</h2>
+
         </section>
         <section id="contact">
           <h2>Contact</h2>
@@ -153,11 +197,16 @@ function App() {
               type="text" 
               placeholder='Heading'
             />
-            <input 
+            <textarea 
               type="text" 
               placeholder='Enter your message'
+              className='message'
             />
-            <button type="submit">Send</button>
+            <br />
+            <button type="submit">
+              Send
+              <i className="fa-solid fa-paper-plane"></i>
+            </button>
 
           </form>
         </section>

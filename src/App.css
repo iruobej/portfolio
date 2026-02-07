@@ -1,6 +1,6 @@
 :root {
-  --dark-purple: rgb(22, 1, 70);
-  --darker-purple: rgb(0, 4, 39);
+  --dark-purple: rgb(6, 0, 46);
+  --darker-purple: rgb(0, 3, 26);
   --light-purple: rgb(145, 137, 169);
   --grey: rgb(54, 54, 54);
   --light-blue: #61d4e8;
@@ -60,15 +60,30 @@ nav ul li a:hover {
   font-weight: 700;
 }
 
-.project {
+.project-container {
   display: flex;
-  justify-content: center;
-  border: none;
-  border-radius: 10px;
-  margin: 5px;
-  background-color: var(--light-blue);
-  padding: 5px;
-  font-family: "Urbanist", sans-serif;
+  gap: 15px;
+}
+
+.project {
+  height: 600px;
+  width: 500px;
+  background-color: var(--grey);
+  border-radius: 12px;
+  overflow: hidden; /*crops image*/
+
+  display: flex;
+  flex-direction: column;
+}
+
+.text-area {
+  padding: 50px;
+}
+
+.project img {
+  width: 100%;
+  height: 50%; /*Makes up half the height of the containter*/
+  object-fit: cover;
 }
 
 a {
@@ -154,7 +169,6 @@ section:not(#home) {
   min-height: calc(100vh - var(--nav-height) - 130px); /* 160 = 80 top + 80 bottom margin */
   gap: 24px;
   padding: 80px;
-  background-color: var(--light-purple);
   margin: 80px 70px;
   padding: 40px;
   border-radius: 10px;
@@ -213,4 +227,46 @@ section:not(#home) {
 .tech-item:hover .tech-label {
   opacity: 1;
   transform: translateY(0);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 100px 300px;
+
+  background-color: var(--darker-purple);
+  padding: 50px 30px;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+form input, textarea {
+  background-color: var(--light-purple);
+  border: none;
+  padding: 10px;
+  color: black;
+  font-family: inherit;
+  font-size: medium;
+  border-radius: 10px;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #4c4d4d;
+}
+
+textarea {
+  height: 200px;
+}
+
+form button {
+  margin: 0 300px;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: medium;
+  font-weight: 600;
+  color: inherit;
+  background-color: var(--light-blue);
+  border: none;
+  text-align: center;
 }
