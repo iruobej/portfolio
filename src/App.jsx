@@ -26,6 +26,47 @@ import calcPic from "./images/calcPic.png"
 import todoPic from "./images/todoPic.png"
 
 function App() {
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [fromName, setFromName] = useState("");
+  const [fromEmail, setFromEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  async function sendContact(e) {
+    e.preventDefault();
+    setError("");
+    setSuccess(false);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/.netlify/functions/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject,
+          message,
+          fromName,
+          fromEmail,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data?.error || "Failed to send");
+      }
+
+      setSuccess(true);
+      setSubject("");
+      setMessage("");
+    } catch (err) {
+      setError(err.message || "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  }
 
   return (
     <> 
@@ -64,9 +105,11 @@ function App() {
           <p>
             Currently, I am a recent graduate looking for a company where I can use my expertise to help people through tech.
           </p>
+
+          <br />
+
           <h1>Tech Stack</h1>
           <p>Here is a list of all the technologies I have worked with: </p>
-          <div className="tech-stack">
             <div className="tech-stack">
               <div className="tech-item">
                 <img src={jsLogo} alt="JavaScript logo" />
@@ -128,7 +171,7 @@ function App() {
                 <span className="tech-label">C++</span>
               </div>
             </div>
-          </div>
+
         </section>
         <section id="projects">
             <h1>Projects</h1>
@@ -191,23 +234,48 @@ function App() {
 
         </section>
         <section id="contact">
-          <h2>Contact</h2>
-          <form action="">
+          <h1>Contact</h1>
+          <form onSubmit={sendContact}>
+            <input
+              type="text"
+              placeholder="Your name"
+              value={fromName}
+              onChange={(e) => setFromName(e.target.value)}
+              required
+            />
+
+            <input
+              type="email"
+              placeholder="Your email"
+              value={fromEmail}
+              onChange={(e) => setFromEmail(e.target.value)}
+              required
+            />
+
             <input 
               type="text" 
               placeholder='Heading'
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              required
             />
             <textarea 
               type="text" 
               placeholder='Enter your message'
               className='message'
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
             />
             <br />
-            <button type="submit">
-              Send
+
+            <button type="submit" disabled={loading}>
+              {loading ? "Sending..." : "Send"}
               <i className="fa-solid fa-paper-plane"></i>
             </button>
 
+            {error && <p className="error">{error}</p>}
+            {success && <p className="success">Message sent!</p>}
           </form>
         </section>
           <a href="mailto:iruobejoshua96@gmail.com">
