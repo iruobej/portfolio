@@ -2,6 +2,7 @@
   --dark-purple: rgb(6, 0, 46);
   --darker-purple: rgb(0, 3, 26);
   --light-purple: rgb(145, 137, 169);
+  --strong-purple: rgb(96, 26, 143);
   --grey: rgb(54, 54, 54);
   --light-blue: #61d4e8;
   --icon-size: 30px;
@@ -145,6 +146,62 @@ section {
   -webkit-mask-image: linear-gradient(to left, black 70%, transparent);
 }
 
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    min-height: 100vh;
+
+    /* image behind everything */
+    background-image: url("/portfolio_pic.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* purple overlay ON TOP of the image */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 0, 46, 0.6); /* your dark purple, with opacity */
+    z-index: 0;
+  }
+
+  /* keep text above the overlay */
+  .hero-text {
+    position: relative;
+    z-index: 1;
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  /* remove the right-side image column completely */
+  .avatar,
+  .hero-image {
+    display: none;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .project {
+    height: 500px;
+    width: 400px;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .skill {
+    height: 200px;
+  }
+}
+
 .cvButton {
   background-color: var(--darker-purple);
   color: white;
@@ -163,6 +220,20 @@ section {
   color: var(--dark-purple);
   background-color: var(--light-blue);
   transform: scale(1.06);
+}
+
+.fade-in-bottom {
+  opacity: 0;
+  transform: translateY(45px);
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 section:not(#home) {
@@ -259,7 +330,7 @@ textarea {
 }
 
 form button {
-  margin: 0 300px;
+  margin: 0 auto;
   border-radius: 10px;
   padding: 10px;
   font-family: inherit;
@@ -268,4 +339,50 @@ form button {
   color: inherit;
   background-color: var(--light-blue);
   border: none;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.skill {
+  background-color: var(--darker-purple);
+  border: 2px solid var(--strong-purple);
+  min-height: 400px;
+  text-align: start;
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 300px;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    box-shadow:  0 0 10px var(--strong-purple);
+  }
+  to {
+    box-shadow: 
+      0 0 10px var(--strong-purple),
+      0 0 15px var(--strong-purple),
+      0 0 30px var(--strong-purple);
+  }
+}
+
+.skill li {
+  margin-bottom: 10px;
+}
+
+.skill h2,
+.skill li {
+  text-shadow: none;
+  transition: 0.3s ease;
+}
+
+.skill h2:hover,
+.skill li:hover {
+  text-shadow: 0 0 5px;
 }

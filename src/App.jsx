@@ -71,8 +71,8 @@ function App() {
   return (
     <> 
       <Navbar></Navbar>
-      <section id="home" className='hero'>
-        <div className="hero-text">
+      <section id="home" className='hero w3-container'>
+        <div className="hero-text fade-in-bottom">
           <h1>Hi there! I'm <span style={{color: '#61d4e8'}}>Joshua Iruobe</span></h1> 
           <p className="header">A <span style={{color: '#61d4e8'}}>web developer,</span> passionate about clean design and code<span style={{color: '#61d4e8'}}>.</span></p>
           <a 
@@ -207,10 +207,10 @@ function App() {
             </div>
         </section>
         <section id="education">
-          <h2>Education</h2>
+          <h1>Education</h1>
           <div className="tech-item">
             <img src={LUlogo} alt="Lough Uni Logo" className="tech-item"/>
-            <h3>Loughborough University</h3>
+            <h2>Loughborough University</h2>
           </div>
           <p>Computer Science BSc - Grade 2:1</p>
           <br />
@@ -218,7 +218,7 @@ function App() {
           <br />
           <div className="tech-item">
             <img src={bethsLogo} alt="Beths Grammar School Logo" />
-            <h3>Beths Grammar School</h3>
+            <h2>Beths Grammar School</h2>
             <p>A Levels: Mathematics (B), Computer Science (A), Sociology (A)</p>
           </div>
         </section>
@@ -226,11 +226,49 @@ function App() {
           <h1>Skills</h1>
 
             <hr />
-            <h2>React.js</h2>
-            <h2>Problem-solving</h2>
-            <h2>Responsive Design</h2>
-            <h2>State management</h2>
-            <h2>Git & workflow</h2>
+            <div className="skills-container">
+              <div className="skill">
+                <i class="fa-solid fa-code"></i>
+                <h2>Frontend</h2>
+                <ul>
+                  <li>JavaScript</li>
+                  <li>TypeScript</li>
+                  <li>React</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                </ul>
+              </div>
+              <div className="skill">
+                <i class="fa-solid fa-database"></i>
+                <h2>Databases</h2>
+                <ul>
+                  <li>MySQL</li>
+                  <li>PostgreSQL</li>
+                  <li>MongoDB</li>
+                  <li>pgAdmin</li>
+                </ul>
+              </div>
+              <div className="skill">
+                <i class="fa-solid fa-wrench"></i>
+                <h2>Tools</h2>
+                <ul>
+                  <li>GitHub</li>
+                  <li>Vite</li>
+                  <li>CMS</li>
+                  <li>VS Code</li>
+                  <li>Figma</li>
+                </ul>
+              </div>
+              <div className="skill">
+                <i class="fa-solid fa-vial"></i>
+                <h2>Testing</h2>
+                <ul>
+                  <li>Jest</li>
+                  <li>React Testing Library</li>
+                  <li>Unit Testing</li>
+                </ul>
+              </div>
+            </div>
 
         </section>
         <section id="contact">
