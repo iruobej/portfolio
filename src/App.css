@@ -146,62 +146,6 @@ section {
   -webkit-mask-image: linear-gradient(to left, black 70%, transparent);
 }
 
-@media (max-width: 768px) {
-  .hero {
-    position: relative;
-    min-height: 100vh;
-
-    /* image behind everything */
-    background-image: url("/portfolio_pic.JPG");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  /* purple overlay ON TOP of the image */
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(6, 0, 46, 0.6); /* your dark purple, with opacity */
-    z-index: 0;
-  }
-
-  /* keep text above the overlay */
-  .hero-text {
-    position: relative;
-    z-index: 1;
-    padding: 0 24px;
-    text-align: center;
-  }
-
-  /* remove the right-side image column completely */
-  .avatar,
-  .hero-image {
-    display: none;
-  }
-
-  .project-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .project {
-    height: 500px;
-    width: 400px;
-  }
-
-  .skills-container {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .skill {
-    height: 200px;
-  }
-}
-
 .cvButton {
   background-color: var(--darker-purple);
   color: white;
@@ -240,7 +184,8 @@ section:not(#home) {
   min-height: calc(100vh - var(--nav-height) - 130px); /* 160 = 80 top + 80 bottom margin */
   gap: 24px;
   padding: 80px;
-  margin: 80px 70px;
+  margin: 80px auto;   /* centers section */
+  max-width: 1000px;   /* prevents very wide layout */
   padding: 40px;
   border-radius: 10px;
   text-align: center;
@@ -303,7 +248,7 @@ section:not(#home) {
 form {
   display: flex;
   flex-direction: column;
-  margin: 100px 300px;
+  margin: 0 20%;
 
   background-color: var(--darker-purple);
   padding: 50px 30px;
@@ -385,4 +330,73 @@ form button {
 .skill h2:hover,
 .skill li:hover {
   text-shadow: 0 0 5px;
+}
+
+@media (max-width: 900px) {
+  section:not(#home) {
+    margin: 24px 12px;   /* smaller outer space */
+    padding: 24px 12px;  /* smaller inner space */
+  }
+
+
+  .hero {
+    position: relative;
+    min-height: 100vh;
+
+    /* image behind everything */
+    background-image: url("/portfolio_pic.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* purple overlay ON TOP of the image */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 0, 46, 0.6); /* your dark purple, with opacity */
+    z-index: 0;
+  }
+
+  /* keep text above the overlay */
+  .hero-text {
+    position: relative;
+    z-index: 1;
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  /* remove the right-side image column completely */
+  .avatar,
+  .hero-image {
+    display: none;
+  }
+
+  .project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .project {
+    height: 500px;
+    width: 400px;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill {
+    height: 200px;
+  }
+
+  form {
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
 }
