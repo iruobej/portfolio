@@ -26,7 +26,7 @@ nav {
   z-index: 1000;
 }
 
-nav ul {
+.nav-links {
   background-color: var(--darker-purple);
   margin: 0;
   list-style: none;
@@ -37,12 +37,16 @@ nav ul {
   padding-right: 40px;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
   color: var(--light-blue);
 }
 
+.hamburger {
+  display: none;
+}
+
 .fa-bars {
-  color: black;
+  color: white;
 }
 
 .circle {
@@ -332,7 +336,51 @@ form button {
   text-shadow: 0 0 5px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
+  nav {
+    background: transparent;
+    position: fixed;
+    width: 100%;
+  }
+
+  /* show hamburger */
+  .hamburger {
+    position: absolute;
+    z-index: 1001;
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+  }
+
+  /* sidebar menu (hidden off-screen by default) */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -280px;   /* hidden */
+    width: 260px;
+    height: 100vh;
+    background-color: var(--darker-purple);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    transition: right 0.3s ease;
+    padding: 0;
+    margin: 0;
+    z-index: 999;
+  }
+
+  /* when open, slide in */
+  .nav-links.open {
+    left: 0;
+  }
+
   section:not(#home) {
     margin: 24px 12px;   /* smaller outer space */
     padding: 24px 12px;  /* smaller inner space */
