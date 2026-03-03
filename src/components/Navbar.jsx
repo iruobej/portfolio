@@ -1,4 +1,4 @@
-import { inherits } from "node:util";
+
 import { useState } from "react";
 
 function Navbar () {
@@ -11,7 +11,7 @@ function Navbar () {
                 className="hamburger"
                 onClick={() => setOpen(!open)}
             >
-                <i class="fa-solid fa-bars" style={{color: "inherit"}}></i>
+                <i class="fa-solid fa-bars"></i>
             </button>
             <ul className={open ? "nav-links open" : "nav-links"}>
                 {/* clicking on any link will close the sidebar */}
