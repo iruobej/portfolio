@@ -37,8 +37,30 @@ nav {
   padding-right: 40px;
 }
 
+.nav-links li a {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: var(--light-blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
 .nav-links li a:hover {
   color: var(--light-blue);
+}
+
+.nav-links li a:hover::after {
+  transform: scaleX(1);
 }
 
 .hamburger {
@@ -337,7 +359,7 @@ form button {
 }
 
 @media (max-width: 1200px) {
-  /* 1) Purple strip that stays on screen */
+  /* Purple strip that stays on screen */
   nav {
     position: fixed;
     top: 0;
@@ -351,7 +373,7 @@ form button {
     align-items: center;
   }
 
-  /* 2) Hamburger sits inside the strip */
+  /*Hamburger sits inside the strip */
   .hamburger {
     display: block;
     margin-left: 16px;
@@ -363,7 +385,7 @@ form button {
     z-index: 2001;
   }
 
-  /* 3) IMPORTANT: push page down so nav doesn't cover your content */
+  
   body {
     padding-top: var(--nav-height);
   }
@@ -383,7 +405,7 @@ form button {
     align-items: center;
     gap: 30px;
 
-    transition: left 0.3s ease; /* FIX: was right */
+    transition: left 0.3s ease; 
     padding: 0;
     margin: 0;
     z-index: 1999;
@@ -391,6 +413,10 @@ form button {
 
   .nav-links.open {
     left: 0;
+  }
+
+  .nav-links:hover {
+
   }
 
   section:not(#home) {
