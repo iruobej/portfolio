@@ -20,6 +20,7 @@ import sqlLogo from "./images/sql.jfif";
 import LUlogo from "./images/LU.png";
 import bethsLogo from "./images/beths.jpg";
 
+import pianoPic from "./images/pianoPic.png"
 import mmPic from "./images/MM.PNG"
 import weatherPic from "./images/weatherApp.png"
 import calcPic from "./images/calcPic.png"
@@ -176,6 +177,12 @@ function App() {
         <section id="projects">
             <h1>Projects</h1>
             <div className="project-container">
+              <Project 
+                projName="Piano Trainer"
+                link="https://piano-trainer-ji.netlify.app/"
+                pic={pianoPic}
+                desc="Website designed to help users learn and memorise different chord types. The user must play the chord on display within a certain time limit, which can be adjusted."            
+              />
               <Project 
                 projName="Movie Master"
                 link="https://movie-master-ji.netlify.app/"
