@@ -465,7 +465,7 @@ form button {
 
   .project {
     height: 500px;
-    width: 350px;
+    width: 300px;
     flex-shrink: 0;
   }
 
@@ -476,6 +476,7 @@ form button {
 
   .skill {
     height: 200px;
+    min-width: 250px;
   }
 
   form {
