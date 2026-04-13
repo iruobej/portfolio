@@ -187,17 +187,14 @@ function App() {
                 projName="Movie Master"
                 link="https://movie-master-ji.netlify.app/"
                 pic={mmPic}
-                desc="Movie Master is a full-stack movie discovery and AI-powered chat application built with React, 
-                TypeScript, and Netlify Functions.
-                Users can search movies via the TMDB API, manage a personal watchlist, and chat with an AI assistant (“MovieBot”) 
-                for movie recommendations and questions."            
+                desc="A full-stack movie discovery and AI-powered chat application built with React, 
+                TypeScript, TMDB API, and Netlify Functions."            
               />
               <Project 
                 projName="Weather App"
                 link="https://weather-jiruobe.netlify.app/"
                 pic={weatherPic}
-                desc="Weather App that enables users to find the temperature of cities across the world. 
-                I made this project to practice working with APIs can get used to API calls and responses."            
+                desc="Weather App that enables users to find the temperature of cities across the world."            
               />
               <Project 
                 projName="Calculator"

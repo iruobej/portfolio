@@ -90,6 +90,7 @@ nav {
 .project-container {
   display: flex;
   gap: 15px;
+  margin: 0 -200px;
 }
 
 .project {
@@ -104,7 +105,7 @@ nav {
 }
 
 .text-area {
-  padding: 50px;
+  padding: 25px;
 }
 
 .project img {
@@ -456,21 +457,21 @@ form button {
   }
 
   .project-container {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     gap: 15px;
     margin: 0 auto;
+    overflow-x: auto; /*enabling scrolling*/
   }
 
   .project {
     height: 500px;
-    width: 400px;
+    width: 350px;
+    flex-shrink: 0;
   }
 
   .skills-container {
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
   }
 
   .skill {
