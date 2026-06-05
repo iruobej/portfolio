@@ -292,6 +292,7 @@ function App() {
                 <i class="fa-solid fa-wrench"></i>
                 <h2>Tools</h2>
                 <ul>
+                  <li>AI: ChatGPT, Google Gemini & Claude</li>
                   <li>GitHub</li>
                   <li>Vite</li>
                   <li>CMS</li>
@@ -319,6 +320,7 @@ function App() {
             viewport={{ once: true }}
           >
             <h1>Contact</h1>
+            <p>Contact me for job opportunites, freelance work, or just to chat!</p>
             <form onSubmit={sendContact}>
               <input
                 type="text"
