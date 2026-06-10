@@ -20,7 +20,7 @@ function Navbar () {
                 <li><a href="#projects" onClick={() => setOpen(false)}>Projects</a></li>
                 <li><a href="#education" onClick={() => setOpen(false)}>Education</a></li>
                 <li><a href="#skills" onClick={() => setOpen(false)}>Skills</a></li>
-                <li><a href="#contact" onClick={() => setOpen(false)}>Contact</a></li>
+                <li ><a href="#contact" onClick={() => setOpen(false)} className="contactBtn">Contact</a></li>
             </ul>
         </nav>
     )

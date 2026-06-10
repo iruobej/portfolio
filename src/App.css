@@ -434,7 +434,6 @@ form button {
     left: -280px;
     width: 260px;
     height: calc(100vh - var(--nav-height));
-    background-color: var(--darker-purple);
 
     display: flex;
     flex-direction: column;
@@ -442,7 +441,7 @@ form button {
     align-items: center;
     gap: 30px;
 
-    transition: left 0.3s ease; 
+    transition: left 0.3s ease; /*for open subclass*/
     padding: 0;
     margin: 0;
     z-index: 1999;
@@ -450,6 +449,11 @@ form button {
 
   .nav-links.open {
     left: 0;
+  }
+
+  .contactBtn a {
+    background-color: var(--light-blue) !important;
+    color: black !important;
   }
 
   section:not(#home) {
