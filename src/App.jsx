@@ -79,13 +79,13 @@ function App() {
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-        <section id="home" className='hero w3-container'>
+        <section id="home" className='hero'>
         
           <div className="hero-text">
             <h1>Hi there! I'm <span style={{color: '#61d4e8'}}>Joshua Iruobe</span></h1> 
             <p className="header">A <span style={{color: '#61d4e8'}}>web developer,</span> passionate about clean design and code<span style={{color: '#61d4e8'}}>.</span></p>
             <a 
-              href="https://drive.google.com/file/d/19VNgkZbeCFD0H9aeNKU5zpazka4IPxpP/view?usp=sharing"
+              href="https://docs.google.com/document/d/1gSHdRUAHyhVCH_itjNNq6FME_L04IAOKp86-Z2nG8vM/edit?usp=sharing"
               className='cvButton'
               target='_blank'
             >

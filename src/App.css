@@ -378,6 +378,17 @@ form button {
   text-shadow: 0 0 5px;
 }
 
+.contactBtn {
+    background-color: var(--light-blue);
+    color: black;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+.contactBtn:hover {
+  color: var(--dark-purple) !important;
+}
+
 /* SMALLER LAPTOP LAYOUT */
 @media screen and (max-width: 1600px) and (min-width: 801px){
   .project {
@@ -451,10 +462,7 @@ form button {
     left: 0;
   }
 
-  .contactBtn a {
-    background-color: var(--light-blue) !important;
-    color: black !important;
-  }
+  
 
   section:not(#home) {
     margin: 24px 12px;   /* smaller outer space */
@@ -478,7 +486,7 @@ form button {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(6, 0, 46, 0.6); /* your dark purple, with opacity */
+    background: rgba(6, 0, 46, 0.6); /* dark purple, with opacity */
     z-index: 0;
   }
 
