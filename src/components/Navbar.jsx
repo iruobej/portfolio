@@ -13,7 +13,7 @@ function Navbar () {
             >
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <ul className={open ? "nav-links open" : "nav-links"}>
+            <ul className={open ? "glass nav-links open" : "glass nav-links"}>
                 {/* clicking on any link will close the sidebar */}
                 <li><a href="#home" onClick={() => setOpen(false)}>Home</a></li>
                 <li><a href="#bio" onClick={() => setOpen(false)}>Bio</a></li>

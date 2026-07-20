@@ -10,9 +10,14 @@
 }
 
 body {
-  background-color: var(--dark-purple);
+  background-image: url(images/cool_background.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+  min-height: 100%;
   color: white;
-  font-family: "Urbanist", sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
 }
 
@@ -41,13 +46,21 @@ nav {
   z-index: 1000;
 }
 
+.glass {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+}
+
 .nav-links {
-  background-color: var(--darker-purple);
-  margin: 0;
+  margin: 10px;
+  border-radius: 50px;
   list-style: none;
   display: flex;
   gap: 60px;
-  justify-content: flex-end; /*Aligns items right*/
+  justify-content: center;
   padding: 30px;
   padding-right: 40px;
 }
@@ -104,25 +117,34 @@ nav {
 
 .project-container {
   display: flex;
+  justify-content: center;
   gap: 15px;
-  margin: 0 -200px;
+  
 }
 
 .project {
-  width: 600px;
+  width: 20px;
   aspect-ratio: 3.5 / 6; /*automatically adjusts height to match ratio (of width to height)*/
   height: auto;
-  background-color: var(--grey);
+
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+
   border-radius: 12px;
   overflow: hidden; /*crops image*/
 
   display: flex;
   flex-direction: column;
+
+  transition: transform 0.2s ease-in-out;
 }
 
 .project:hover {
-  transform: scale(1.05);
-  transition: ease-in-out;
+  transform: translateY(-8px);
+  
 }
 
 .text-area {
@@ -205,13 +227,25 @@ section {
   font-family: "Urbanist", sans-serif;
   display: inline-flex;
 
-  transition: width 0.2s ease;
+  /*transtion property is beter than @keyframes animation if you want the effect not automatically disappear once done*/
+  transition: transform 0.2s ease-in-out,
+              background-color 0.2s ease-in-out,
+              scale 0.2s ease-in-out;
 }
+
 
 .cvButton:hover {
   color: var(--dark-purple);
   background-color: var(--light-blue);
-  transform: scale(1.06);
+  transform: translateY(-4px) scale(1.05);
+}
+
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fade-in-bottom {
@@ -221,12 +255,7 @@ section {
   animation-delay: 0.5s;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 section:not(#home) {
   min-height: calc(100vh - var(--nav-height) - 130px); /* 160 = 80 top + 80 bottom margin */

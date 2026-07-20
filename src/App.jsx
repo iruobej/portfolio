@@ -224,18 +224,6 @@ function App() {
                 pic={weatherPic}
                 desc="Weather App that enables users to find the temperature of cities across the world."            
               />
-              <Project 
-                projName="Calculator"
-                link="https://ji-calculator.netlify.app/"
-                pic={calcPic}
-                desc="A functional calculator which can compute the answer to standard mathematical expressions."            
-              />
-              <Project 
-                projName="To Do List"
-                link="https://todolist-jiruobe.netlify.app/"
-                pic={todoPic}
-                desc="To-do List web app to help users stay on top of daily tasks."            
-              />
             </div>
           </motion.div> 
         </section>
@@ -280,7 +268,7 @@ function App() {
               </div>
               <div className="skill">
                 <i class="fa-solid fa-database"></i>
-                <h2>Databases</h2>
+                <h2>Backend</h2>
                 <ul>
                   <li>MySQL</li>
                   <li>PostgreSQL</li>
@@ -321,7 +309,7 @@ function App() {
           >
             <h1>Contact</h1>
             <p>Contact me for job opportunites, freelance work, or just to chat!</p>
-            <form onSubmit={sendContact}>
+            <form onSubmit={sendContact} className="glass">
               <input
                 type="text"
                 placeholder="Your name"
