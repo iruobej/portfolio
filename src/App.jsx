@@ -19,12 +19,6 @@ import sqlLogo from "./images/sql.jfif";
 import LUlogo from "./images/LU.png";
 import bethsLogo from "./images/beths.jpg";
 
-import pianoPic from "./images/pianoPic.png"
-import mmPic from "./images/MM.PNG"
-import weatherPic from "./images/weatherApp.png"
-import calcPic from "./images/calcPic.png"
-import todoPic from "./images/todoPic.png"
-
 function App() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");

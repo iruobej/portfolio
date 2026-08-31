@@ -470,7 +470,19 @@ form button {
 
   
   body {
-    padding-top: var(--nav-height);
+    background-attachment: scroll;
+    background-image: none; /* remove it from body */
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url(images/cool_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
   }
 
   /* 4) Sidebar slides from the left, BELOW the purple strip */
