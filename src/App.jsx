@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion' //for delayed animation on scroll
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { motion } from 'framer-motion' //for delayed animation on scrolls
 import Navbar from './components/Navbar'
-import Project from './components/Project'
+import ProjectList from './components/ProjectList'
 import './App.css'
 
 import jsLogo from "./images/js.png";
@@ -205,25 +203,7 @@ function App() {
           >
             <h1>Projects</h1>
             <div className="project-container">
-              <Project 
-                projName="Piano Trainer"
-                link="https://piano-trainer-ji.netlify.app/"
-                pic={pianoPic}
-                desc="Website designed to help users learn and memorise different chord types. The user must play the chord on display within a certain time limit, which can be adjusted."            
-              />
-              <Project 
-                projName="Movie Master"
-                link="https://movie-master-ji.netlify.app/"
-                pic={mmPic}
-                desc="A full-stack movie discovery and AI-powered chat application built with React, 
-                TypeScript, TMDB API, and Netlify Functions."            
-              />
-              <Project 
-                projName="Weather App"
-                link="https://weather-jiruobe.netlify.app/"
-                pic={weatherPic}
-                desc="Weather App that enables users to find the temperature of cities across the world."            
-              />
+              <ProjectList/>
             </div>
           </motion.div> 
         </section>

@@ -44,6 +44,11 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+nav:not(#contact) {
+  text-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
 }
 
 .glass {
@@ -116,6 +121,7 @@ nav {
 }
 
 .project-container {
+  list-style: none;
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -534,14 +540,13 @@ form button {
   }
 
   .project-container {
-    align-items: center;
-    gap: 15px;
-    margin: 0 auto;
-    overflow-x: auto; /*enabling scrolling*/
+    justify-content: flex-start;
+    overflow-x: auto;
   }
 
   .project {
     width: 300px;
+    aspect-ratio: 1 / 1.5;
     flex-shrink: 0;
   }
 
@@ -559,9 +564,8 @@ form button {
 
   form {
     justify-content: center;
-    width: 100%;
-    max-width: 250px;
-    margin: 0 auto;
+    width: 250px;
+    aspect-ratio: 1 / 1.5;
   }
 
 }
