@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion } from 'framer-motion' //for delayed animation on scrolls
 import Navbar from './components/Navbar'
 import ProjectList from './components/ProjectList'
+import ContactLinks from './components/ContactLinks'
+import TechStack from './components/TechStack'
 import './App.css'
 
 import jsLogo from "./images/js.png";
@@ -78,12 +80,13 @@ function App() {
             <p className="header">A <span style={{color: '#61d4e8'}}>web developer,</span> passionate about clean design and code<span style={{color: '#61d4e8'}}>.</span></p>
             <a 
               href="https://docs.google.com/document/d/1gSHdRUAHyhVCH_itjNNq6FME_L04IAOKp86-Z2nG8vM/edit?usp=sharing"
-              className='cvButton'
+              id='cvButton'
               target='_blank'
             >
               <i className="fas fa-file"></i>
               View CV
             </a>
+            <ContactLinks/>
           </div>
              
           <div className="avatar">
@@ -123,69 +126,9 @@ function App() {
             transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
           >
-          <h1>Tech Stack</h1>
-          <p>Here is a list of all the technologies I have worked with: </p>
-            <div className="tech-stack">
-              <div className="tech-item">
-                <img src={jsLogo} alt="JavaScript logo" />
-                <span className="tech-label">JavaScript</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={reactLogo2} alt="React logo" />
-                <span className="tech-label">React</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={tsLogo} alt="TypeScript logo" />
-                <span className="tech-label">TypeScript</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={nodeLogo} alt="Node.js logo" />
-                <span className="tech-label">Node.js</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={viteLogo2} alt="Vite logo" />
-                <span className="tech-label">Vite</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={sqlLogo} alt="SQL logo" />
-                <span className="tech-label">SQL</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={htmlLogo} alt="HTML logo" />
-                <span className="tech-label">HTML</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={cssLogo} alt="CSS logo" />
-                <span className="tech-label">CSS</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={pythonLogo} alt="Python logo" />
-                <span className="tech-label">Python</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={javaLogo} alt="Java logo" />
-                <span className="tech-label">Java</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={kotlinLogo} alt="Kotlin logo" />
-                <span className="tech-label">Kotlin</span>
-              </div>
-
-              <div className="tech-item">
-                <img src={cppLogo} alt="C++ logo" />
-                <span className="tech-label">C++</span>
-              </div>
-            </div>
+            <h1>Tech Stack</h1>
+            <p>Here is a list of all the technologies I have worked with: </p>
+            <TechStack />
            </motion.div> 
       </section>
         <section id="projects">
@@ -230,7 +173,7 @@ function App() {
             <hr />
             <div className="skills-container">
               <div className="skill">
-                <i class="fa-solid fa-code"></i>
+                <i className="fa-solid fa-code"></i>
                 <h2>Frontend</h2>
                 <ul>
                   <li>JavaScript</li>
@@ -327,23 +270,7 @@ function App() {
             </form>
           </motion.div>  
         </section>
-          <a href="mailto:iruobejoshua96@gmail.com">
-            <i className="fa-solid fa-envelope"></i>
-          </a>
-
-          <a href="https://www.linkedin.com/in/joshua-iruobe-aa22a81b3/" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-linkedin"></i>
-          </a>
-
-          <a href="https://github.com/iruobej" target="_blank" rel="noopener noreferrer">
-            <i className="fa-brands fa-github"></i>
-          </a>
-
-
-          <a href="tel:+447535293713">
-            <i className="fa-solid fa-phone"></i>
-          </a>
-          <span>: +447535293713</span>
+        <ContactLinks/>
       </div>
     </>
   )

@@ -9,42 +9,30 @@
   --nav-height: 96px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-image: url(images/cool_background.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-size: 100% 100vh;
-  background-repeat: no-repeat;
-  min-height: 100%;
   color: white;
   font-family: "Inter", sans-serif;
   margin: 0;
-}
-
-html {
-  scroll-behavior: smooth;
+  min-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 ::-webkit-scrollbar {
   width: 15px;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--dark-purple);
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--strong-purple);
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: var(--light-purple);
-}
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.5);
 }
 
 nav:not(#contact) {
@@ -54,20 +42,14 @@ nav:not(#contact) {
 .glass {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.30);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
 }
 
 .nav-links {
-  margin: 10px;
-  border-radius: 50px;
   list-style: none;
-  display: flex;
-  gap: 60px;
-  justify-content: center;
-  padding: 30px;
-  padding-right: 40px;
+  border-radius: 50px;
 }
 
 .nav-links li a {
@@ -96,23 +78,12 @@ nav:not(#contact) {
   transform: scaleX(1);
 }
 
-.hamburger {
-  display: none;
-}
-
 .fa-bars {
   color: white;
 }
 
-.circle {
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
-  background-color: white;
-} 
-
 .avatar {
-  overflow: hidden; /*Hides the rest of the picture*/
+  overflow: hidden;
 }
 
 .header {
@@ -123,34 +94,25 @@ nav:not(#contact) {
 .project-container {
   list-style: none;
   display: flex;
-  justify-content: center;
   gap: 15px;
-  
 }
 
 .project {
-  width: 20px;
-  aspect-ratio: 3.5 / 6; /*automatically adjusts height to match ratio (of width to height)*/
   height: auto;
-
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.30);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
-
   border-radius: 12px;
-  overflow: hidden; /*crops image*/
-
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-
   transition: transform 0.2s ease-in-out;
 }
 
 .project:hover {
   transform: translateY(-8px);
-  
 }
 
 .text-area {
@@ -159,7 +121,7 @@ nav:not(#contact) {
 
 .project img {
   width: 100%;
-  height: 50%; /*Makes up half the height of the containter*/
+  height: 50%;
   object-fit: cover;
 }
 
@@ -181,48 +143,29 @@ section {
   scroll-margin-top: var(--nav-height);
 }
 
-/*hero page at the top*/
-.hero{
+.hero {
+  position: relative;
   display: flex;
   align-items: center;
-  min-height: 100vh; /*covers whole screen*/
+  min-height: 100vh;
   overflow: hidden;
-}
-
-.hero-text {
-  flex: 1.4;
-  padding: 0 80px;
-  z-index: 2;
 }
 
 .hero-text h1 {
   font-size: clamp(3rem, 5vw, 5rem);
-  font-weight:800;
+  font-weight: 800;
   line-height: 1.1;
-}
-
-.hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  height: 100vh;
-  position: relative;
 }
 
 .hero-image img {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  flex: 0.6;
-
-
-  /*fading effect*/
   mask-image: linear-gradient(to left, black 70%, transparent);
   -webkit-mask-image: linear-gradient(to left, black 70%, transparent);
 }
 
-.cvButton {
+#cvButton {
   background-color: var(--darker-purple);
   color: white;
   border-radius: 5px;
@@ -230,17 +173,17 @@ section {
   box-shadow: #626464;
   padding: 15px;
   font-weight: 700;
-  font-family: "Urbanist", sans-serif;
-  display: inline-flex;
-
-  /*transtion property is beter than @keyframes animation if you want the effect not automatically disappear once done*/
+  font-family: inherit;
+  display: block;
+  text-align: center;
+  width: 300px;
+  margin: 20px auto;
   transition: transform 0.2s ease-in-out,
               background-color 0.2s ease-in-out,
               scale 0.2s ease-in-out;
 }
 
-
-.cvButton:hover {
+#cvButton:hover {
   color: var(--dark-purple);
   background-color: var(--light-blue);
   transform: translateY(-4px) scale(1.05);
@@ -261,15 +204,9 @@ section {
   animation-delay: 0.5s;
 }
 
-
-
 section:not(#home) {
-  min-height: calc(100vh - var(--nav-height) - 130px); /* 160 = 80 top + 80 bottom margin */
+  min-height: calc(100vh - var(--nav-height) - 130px);
   gap: 24px;
-  padding: 80px;
-  margin: 80px auto;   /* centers section */
-  max-width: 1000px;   /* prevents very wide layout */
-  padding: 40px;
   border-radius: 10px;
   text-align: center;
 }
@@ -291,24 +228,20 @@ section:not(#home) {
 .tech-item img {
   width: 60px;
   height: 60px;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 10px;
   display: block;
   transition: transform 0.25s ease-in-out;
-  background-image: white;
 }
 
-/* label BELOW the image */
 .tech-label {
   font-size: 0.75rem;
   font-weight: 600;
-
   opacity: 0;
   transform: translateY(-4px);
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* hover the WRAPPER, not just the image */
 .tech-item:hover img {
   transform: translateY(-6px);
 }
@@ -318,18 +251,9 @@ section:not(#home) {
   transform: translateY(0);
 }
 
-
-.tech-item:hover .tech-label {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 form {
   display: flex;
   flex-direction: column;
-
-  width: 100%;
-  max-width: 500px;
   margin: 0 auto;
   background-color: var(--darker-purple);
   padding: 50px 30px;
@@ -369,7 +293,6 @@ form button {
 
 .skills-container {
   display: flex;
-  justify-content: center;
   gap: 15px;
   width: 100%;
   margin-top: 30px;
@@ -378,20 +301,19 @@ form button {
 .skill {
   background-color: var(--darker-purple);
   border: 2px solid var(--strong-purple);
-  min-height: 400px;
   text-align: start;
   padding: 10px;
   border-radius: 5px;
-  min-width: 300px;
   animation: glowPulse 2s infinite alternate;
+  height: 400px;
 }
 
 @keyframes glowPulse {
   from {
-    box-shadow:  0 0 10px var(--strong-purple);
+    box-shadow: 0 0 10px var(--strong-purple);
   }
   to {
-    box-shadow: 
+    box-shadow:
       0 0 10px var(--strong-purple),
       0 0 15px var(--strong-purple),
       0 0 30px var(--strong-purple);
@@ -414,170 +336,257 @@ form button {
 }
 
 .contactBtn {
-    background-color: var(--light-blue);
-    color: black;
-    padding: 12px;
-    border-radius: 10px;
-  }
+  background-color: var(--light-blue);
+  color: black;
+  padding: 12px;
+  border-radius: 10px;
+}
 
 .contactBtn:hover {
   color: var(--dark-purple) !important;
 }
 
-/* SMALLER LAPTOP LAYOUT */
-@media screen and (max-width: 1600px) and (min-width: 801px){
-  .project {
-    width: 400px;
-  }
-  form {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
+/* MOBILE */
 
-  }
-
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--darker-purple);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
 }
 
-/* MOBILE LAYOUT*/
-@media screen and (max-width: 800px) {
-  /* Purple strip that stays on screen */
+.hamburger {
+  display: block;
+  margin-left: 16px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 2001;
+}
+
+body {
+  background-attachment: scroll;
+  background-image: none;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url(images/cool_background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.nav-links {
+  position: fixed;
+  top: var(--nav-height);
+  left: -280px;
+  width: 260px;
+  height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  z-index: 1999;
+  transition: left 0.3s ease;
+}
+
+.nav-links.open {
+  left: 0;
+}
+
+section:not(#home) {
+  margin: 24px 12px;
+  padding: 24px 12px;
+}
+
+.hero {
+  background-image: url("/portfolio_pic.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 0, 46, 0.6);
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.avatar,
+.hero-image {
+  display: none;
+}
+
+.project-container {
+  justify-content: flex-start;
+  overflow-x: auto;
+}
+
+.project {
+  width: 300px;
+  aspect-ratio: 1 / 1.3;
+  flex-shrink: 0;
+}
+
+.skills-container {
+  justify-content: flex-start;
+  overflow-x: auto;
+}
+
+.skill {
+  height: 200px;
+  min-width: 250px;
+}
+
+form {
+  justify-content: center;
+  width: 250px;
+  aspect-ratio: 1 / 1.5;
+}
+
+/*TABLET + LAPTOP (>=801px) */
+
+@media (min-width: 801px) {
   nav {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
+    left: auto;
     width: 100%;
-    height: var(--nav-height);
-    background-color: var(--darker-purple);
-    z-index: 2000;
-
-    display: flex;
-    align-items: center;
+    margin: 0 auto;
+    height: auto;
+    z-index: 1000;
+    background-color: transparent;
+    overflow: hidden;
   }
 
-  /*Hamburger sits inside the strip */
   .hamburger {
-    display: block;
-    margin-left: 16px;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 32px;
-    cursor: pointer;
-    z-index: 2001;
-  }
-
-  
-  body {
-    background-attachment: scroll;
-    background-image: none; /* remove it from body */
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url(images/cool_background.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-  }
-
-  /* 4) Sidebar slides from the left, BELOW the purple strip */
-  .nav-links {
-    position: fixed;
-    top: var(--nav-height);
-    left: -280px;
-    width: 260px;
-    height: calc(100vh - var(--nav-height));
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-
-    transition: left 0.3s ease; /*for open subclass*/
-    padding: 0;
-    margin: 0;
-    z-index: 1999;
-  }
-
-  .nav-links.open {
-    left: 0;
-  }
-
-  
-
-  section:not(#home) {
-    margin: 24px 12px;   /* smaller outer space */
-    padding: 24px 12px;  /* smaller inner space */
-  }
-
-
-  .hero {
-    position: relative;
-    min-height: 100vh;
-
-    /* image behind everything */
-    background-image: url("/portfolio_pic.JPG");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  /* purple overlay ON TOP of the image */
-  .hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(6, 0, 46, 0.6); /* dark purple, with opacity */
-    z-index: 0;
-  }
-
-  /* keep text above the overlay */
-  .hero-text {
-    position: relative;
-    z-index: 1;
-    padding: 0 24px;
-    text-align: center;
-  }
-
-  /* remove the right-side image column completely */
-  .avatar,
-  .hero-image {
     display: none;
   }
 
+  body {
+    background-image: url(images/cool_background.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100vh;
+  }
+
+  body::before {
+    content: none;
+  }
+
+  #cvButton {
+    margin: 20px 0;
+  }
+
+  .nav-links {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: center;
+    margin: 10px;
+    padding: 30px;
+    padding-right: 40px;
+  }
+
+  section:not(#home) {
+    margin: 80px auto;
+    padding: 40px;
+    max-width: 1000px;
+  }
+
+  .hero {
+    background-image: none;
+  }
+
+  .hero::before {
+    content: none;
+  }
+
+  .hero-text {
+    flex: 1.4;
+    padding: 0 80px;
+    text-align: left;
+    z-index: 2;
+  }
+
+  .avatar {
+    display: block;
+  }
+
+  .hero-image {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    height: 100vh;
+    position: relative;
+  }
+
   .project-container {
-    justify-content: flex-start;
-    overflow-x: auto;
+    justify-content: center;
+    overflow-x: visible;
   }
 
   .project {
     width: 300px;
-    aspect-ratio: 1 / 1.5;
-    flex-shrink: 0;
+    aspect-ratio: 3 / 4.5;
+    flex-shrink: 1;
   }
 
-  
-
   .skills-container {
-    justify-content: flex-start;
-    overflow-x: auto;
+    justify-content: center;
+    overflow-x: visible;
   }
 
   .skill {
-    height: 200px;
-    min-width: 250px;
+    height: auto;
+    min-height: 400px;
+    min-width: 300px;
   }
 
   form {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    aspect-ratio: auto;
     justify-content: center;
-    width: 250px;
-    aspect-ratio: 1 / 1.5;
+  }
+}
+
+/* DESKTOP (≥1600px) */
+
+@media (min-width: 1600px) {
+  .project {
+    width: 400px;
   }
 
+  form {
+    max-width: 500px;
+    height: auto;
+  }
 }
